@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Faizaan Zain – Lead Technical Recruiter</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Rubik:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--sky:#5c94fc;--sky2:#9fc4ff;--paper:#fff8e7;--ink:#1d1a33;--card:#ffffff;--red:#e52521;--gold:#fcb800;--brick:#c84c0c;--grass:#1f9d2a;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--sky:#1a2a6c;--sky2:#3b4fa8;--paper:#14122a;--ink:#f4efe0;--card:#211e40;color-scheme:dark}}
+:root[data-theme="dark"]{--sky:#1a2a6c;--sky2:#3b4fa8;--paper:#14122a;--ink:#f4efe0;--card:#211e40;color-scheme:dark}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Rubik,system-ui,sans-serif;line-height:1.6;overflow-x:hidden}
+h1,h2,h3,.px{font-family:"Press Start 2P",monospace;line-height:1.4;font-weight:400}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.hero{position:relative;min-height:92vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:4rem 1rem 9rem;background:linear-gradient(var(--sky),var(--sky2));overflow:hidden;color:#fff}
+.hero p{margin:.6rem 0;text-shadow:2px 2px 0 rgba(0,0,0,.3)}
+.hi{font-size:.8rem}
+h1{font-size:clamp(1.5rem,7vw,4rem);margin:1rem 0;text-shadow:5px 5px 0 var(--brick);display:flex;flex-wrap:wrap;justify-content:center;gap:0 .15em}
+h1 .w{display:inline-flex}
+h1 span.l{display:inline-block;animation:drop .8s cubic-bezier(.3,1.6,.5,1) both;animation-delay:calc(var(--i)*70ms)}
+h1 span.l:hover{animation:none;transform:translateY(-14px) rotate(-6deg);color:var(--gold);transition:.15s}
+@keyframes drop{0%{transform:translateY(-120vh) rotate(40deg);opacity:0}100%{transform:none;opacity:1}}
+.role{font-size:clamp(.7rem,2.4vw,1rem);font-family:"Press Start 2P",monospace;line-height:1.8;animation:blink 2s steps(2) infinite 2s}
+@keyframes blink{50%{opacity:.6}}
+.btn{display:inline-block;margin-top:1.4rem;padding:1rem 1.6rem;background:var(--red);color:#fff;text-decoration:none;font-family:"Press Start 2P",monospace;font-size:.8rem;box-shadow:0 6px 0 #8f1210;border-radius:4px;transition:transform .1s,box-shadow .1s}
+.btn:hover{transform:translateY(3px);box-shadow:0 3px 0 #8f1210}
+.btn:active{transform:translateY(6px);box-shadow:none}
+.cloud{position:absolute;width:120px;height:40px;background:#fff;border-radius:40px;opacity:.9;animation:drift linear infinite}
+.cloud:before,.cloud:after{content:"";position:absolute;background:#fff;border-radius:50%}
+.cloud:before{width:55px;height:55px;left:18px;top:-26px}.cloud:after{width:40px;height:40px;left:62px;top:-16px}
+@keyframes drift{from{transform:translateX(-200px)}to{transform:translateX(110vw)}}
+.ground{position:absolute;left:0;right:0;bottom:0;height:70px;background:
+linear-gradient(var(--grass) 0 14px,transparent 14px),
+repeating-linear-gradient(90deg,var(--brick) 0 38px,#7a2c05 38px 40px),var(--brick);border-top:4px solid #0d6e17}
+.runner{position:absolute;bottom:70px;left:-60px;width:28px;height:40px;animation:run 9s linear infinite,hop .5s ease-in-out infinite}
+.runner i{position:absolute;display:block}
+.runner .cap{left:0;top:0;width:28px;height:10px;background:var(--red);box-shadow:6px 4px 0 var(--red)}
+.runner .face{left:3px;top:10px;width:22px;height:10px;background:#f5c18f}
+.runner .bod{left:3px;top:20px;width:22px;height:12px;background:#2455d6}
+.runner .leg{left:3px;top:32px;width:22px;height:8px;background:#5a3410;animation:legs .25s steps(2) infinite}
+@keyframes run{to{left:calc(100% + 60px)}}
+@keyframes hop{50%{margin-bottom:46px}}
+@keyframes legs{50%{width:12px}}
+.qb{position:absolute;width:44px;height:44px;background:var(--gold);border:3px solid #a06b00;font-family:"Press Start 2P";color:#7a4a00;display:grid;place-items:center;animation:bob 1.6s ease-in-out infinite;border-radius:4px}
+@keyframes bob{50%{transform:translateY(-14px) rotate(3deg)}}
+section{padding:4.5rem 1.2rem;max-width:980px;margin:0 auto}
+h2{font-size:clamp(1rem,3.4vw,1.5rem);margin:0 0 1.6rem}
+#play{max-width:1040px;padding-bottom:2rem}
+.gw{position:relative;border:6px solid var(--ink);border-radius:8px;overflow:hidden;box-shadow:0 10px 0 rgba(0,0,0,.25);background:#5c94fc}
+canvas{display:block;width:100%;aspect-ratio:20/9;image-rendering:pixelated;touch-action:none}
+#card{position:absolute;left:50%;top:10px;transform:translate(-50%,-160%);background:var(--card);color:var(--ink);border:4px solid var(--ink);border-radius:6px;padding:.8rem 1rem;width:min(92%,440px);transition:transform .35s cubic-bezier(.3,1.6,.5,1);font-size:.9rem;pointer-events:none;z-index:2}
+#card.on{transform:translate(-50%,0)}
+#card b{display:block;font-family:"Press Start 2P";font-size:.7rem;margin-bottom:.4rem;line-height:1.5}
+#end{position:absolute;inset:0;background:rgba(10,8,30,.85);color:#fff;display:none;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:1rem;z-index:3;gap:.5rem}
+#end.on{display:flex}#end{overflow:auto}#end .btn{margin:0;padding:.7rem 1rem;font-size:.6rem}#end h2{margin:0;font-size:1rem}
+.pad{display:none;gap:.6rem;margin-top:1rem;justify-content:space-between}
+.pad div{display:flex;gap:.6rem}
+.pad button{width:68px;height:60px;font-family:"Press Start 2P";font-size:1rem;border:3px solid var(--ink);background:var(--card);color:var(--ink);border-radius:8px;touch-action:none;user-select:none}
+.pad button:active{background:var(--gold)}
+@media (pointer:coarse){.pad{display:flex}}
+.hint{font-size:.85rem;opacity:.8;margin-top:.8rem}
+.marq{overflow:hidden;background:var(--ink);color:var(--gold);padding:.9rem 0;white-space:nowrap;font-family:"Press Start 2P";font-size:.7rem}
+.marq div{display:inline-block;animation:mq 26s linear infinite}
+@keyframes mq{to{transform:translateX(-50%)}}
+.tl{position:relative;padding-left:2rem;border-left:6px dashed var(--brick)}
+.job{position:relative;background:var(--card);border:3px solid var(--ink);border-radius:6px;padding:1rem 1.2rem;margin-bottom:1.6rem;transition:transform .2s}
+.job:hover{transform:rotate(-1.2deg) scale(1.02)}
+.job:before{content:"";position:absolute;left:-2.9rem;top:1.2rem;width:20px;height:20px;background:var(--gold);border:3px solid var(--ink);border-radius:50%}
+.job h3{font-size:.8rem;margin:0 0 .4rem}
+.job small{opacity:.75}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.2rem}
+.tile{background:var(--card);border:3px solid var(--ink);border-radius:6px;padding:1.2rem;box-shadow:6px 6px 0 var(--red);transition:transform .15s,box-shadow .15s}
+.tile:nth-child(2){box-shadow:6px 6px 0 var(--gold)}.tile:nth-child(3){box-shadow:6px 6px 0 var(--grass)}
+.tile:hover{transform:translate(4px,4px);box-shadow:2px 2px 0 var(--ink)}
+.tile h3{font-size:.8rem;margin:0 0 .6rem}
+.rv{opacity:0;transform:translateY(40px) scale(.96);transition:.6s cubic-bezier(.3,1.4,.5,1)}
+.rv.in{opacity:1;transform:none}
+.contact{text-align:center;background:var(--ink);color:var(--paper);max-width:none;margin:0}
+.contact .btn{margin:.6rem}
+.contact .btn.alt{background:#0a66c2;box-shadow:0 6px 0 #064585}
+footer{text-align:center;padding:1.5rem;font-size:.8rem;opacity:.7}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="cloud" style="top:12%;animation-duration:38s"></div>
+  <div class="cloud" style="top:30%;animation-duration:55s;animation-delay:-20s;transform:scale(.7)"></div>
+  <div class="cloud" style="top:6%;animation-duration:70s;animation-delay:-45s;transform:scale(1.2)"></div>
+  <div class="qb" style="left:8%;top:22%">?</div><div class="qb" style="right:9%;top:38%;animation-delay:-.8s">?</div>
+  <p class="hi px">Hello, I’m</p>
+  <h1 id="name" aria-label="Faizaan Zain">FAIZAAN ZAIN</h1>
+  <p class="role">Lead Technical Recruiter</p>
+  <p>I find the engineers behind cloud, security and data projects. Based in the United States.</p>
+  <a class="btn" href="#play">Press start</a>
+  <div class="runner" aria-hidden="true"><i class="cap"></i><i class="face"></i><i class="bod"></i><i class="leg"></i></div>
+  <div class="ground"></div>
+</header>
+
+<div class="marq" aria-hidden="true"><div>Cloud computing ★ Cybersecurity ★ Data engineering ★ IT modernization ★ Startups to enterprises ★ Cloud computing ★ Cybersecurity ★ Data engineering ★ IT modernization ★ Startups to enterprises ★ </div></div>
+
+<section id="play">
+  <h2>Play my résumé</h2>
+  <div class="gw">
+    <canvas id="g" width="800" height="360" tabindex="0" aria-label="Platformer game. Hit the gold blocks from below to read my experience."></canvas>
+    <div id="card" role="status"></div>
+    <div id="end"><h2 class="px" id="et">Level clear!</h2><p id="ep"></p><button class="btn" id="next" style="border:0;cursor:pointer;background:var(--grass);box-shadow:0 6px 0 #0d6e17">Next level</button><div id="fin" style="display:none;flex-direction:column;gap:.5rem;align-items:center"><a class="btn" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=faizaanfaizy123@gmail.com&amp;su=Hiring%20inquiry" target="_blank" rel="noopener">Email on Gmail</a><a class="btn" style="background:#0a66c2;box-shadow:0 6px 0 #064585" href="https://www.linkedin.com/in/faizaan-zain-0a90b3442/" target="_blank" rel="noopener">LinkedIn</a></div><button class="btn" id="again" style="border:0;cursor:pointer">Play again</button></div>
+  </div>
+  <div class="pad" aria-hidden="true"><div><button data-k="L">◀</button><button data-k="R">▶</button></div><button data-k="J">▲</button></div>
+  <p class="hint">Arrows or A/D to run, Space to jump. Bonk the gold blocks from below, smash the bricks, stomp the bugs, grab coins, reach the flag. 3 levels to beat.</p>
+</section>
+
+<section id="about" class="rv">
+  <h2>What I do</h2>
+  <p style="font-size:1.1rem;max-width:60ch">I work at TanTech LLC, where we give businesses top-tier IT talent. Sometimes that is one specialist for a niche project. Sometimes it is a whole team for a large modernization effort. I work with startups and established enterprises alike.</p>
+  <div class="grid" style="margin-top:2rem">
+    <div class="tile"><h3>Cloud computing</h3><p>Engineers who build and run scalable systems.</p></div>
+    <div class="tile"><h3>Cybersecurity</h3><p>People who keep your stack safe and your auditors calm.</p></div>
+    <div class="tile"><h3>Data engineering</h3><p>Builders of the pipelines your analytics depend on.</p></div>
+  </div>
+</section>
+
+<section id="xp" class="rv">
+  <h2>The levels so far</h2>
+  <div class="tl">
+    <div class="job"><h3>TanTech LLC</h3><b>Lead Technical Recruiter</b><br><small>January 2025 to present</small></div>
+    <div class="job"><h3>Iptech Innovative Solutions</h3><b>Business Development Executive</b><br><small>August 2024 to January 2025</small></div>
+    <div class="job"><h3>Amvotech Solutions Inc</h3><b>Technical Recruiter</b><br><small>May 2022 to July 2024</small></div>
+  </div>
+</section>
+
+<section class="contact rv" id="hire">
+  <h2>Need talent? Let’s talk.</h2>
+  <p>Tell me the role, the stack and the deadline.</p>
+  <p class="px" style="font-size:.7rem;word-break:break-all">faizaanfaizy123@gmail.com</p>
+  <a class="btn" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=faizaanfaizy123@gmail.com&amp;su=Hiring%20inquiry" target="_blank" rel="noopener">Email on Gmail</a>
+  <a class="btn alt" href="https://www.linkedin.com/in/faizaan-zain-0a90b3442/" target="_blank" rel="noopener">LinkedIn</a>
+  <button class="btn" id="cp" style="border:0;cursor:pointer;background:var(--grass);box-shadow:0 6px 0 #0d6e17">Copy email</button>
+</section>
+<footer>Built as a game. © Faizaan Zain</footer>
+
+<script>
+// hero letters
+(function(){var n=document.getElementById('name'),t=n.textContent,i=0;n.textContent='';
+t.split(' ').forEach(function(w){var s=document.createElement('span');s.className='w';s.setAttribute('aria-hidden','true');
+w.split('').forEach(function(ch){var l=document.createElement('span');l.className='l';l.textContent=ch;l.style.setProperty('--i',i++);s.appendChild(l)});n.appendChild(s)})})();
+// reveal
+var io=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting)x.target.classList.add('in')})},{threshold:.15});
+document.querySelectorAll('.rv').forEach(function(e){io.observe(e)});
+
+// game
+var cv=document.getElementById('g'),c=cv.getContext('2d'),card=document.getElementById('card'),endEl=document.getElementById('end');
+var W=800,H=360,GY=300,vis=false,lvl=0,WORLD,FLAG,tot=0;
+var TH=[{sky:'#5c94fc',cl:'#fff',hill:'#2fa63a',gt:'#1f9d2a',bb:'#c84c0c',bm:'#7a2c05',bh:'#e87a3a'},
+{sky:'#0b1033',cl:'#2b3a85',hill:'#18267a',gt:'#3aa6d8',bb:'#4a4f8f',bm:'#262a5c',bh:'#7a82d6',st:1},
+{sky:'#3a0f0f',cl:'#6a2222',hill:'#5a1a1a',gt:'#ff6a00',bb:'#6b6b73',bm:'#3a3a40',bh:'#9a9aa5',lava:1}];
+var info=[
+['Amvotech Solutions Inc','Technical Recruiter. May 2022 to July 2024, 2 years 3 months. Where I learned the craft.'],
+['Iptech Innovative Solutions','Business Development Executive. August 2024 to January 2025. Client relationships and partnerships.'],
+['TanTech LLC','Lead Technical Recruiter. January 2025 to now. Cloud, cybersecurity and data engineering talent.'],
+['What I deliver','Specialist developers for niche projects, or whole teams for large IT modernization.'],
+['Cloud computing','Engineers who build, migrate and run scalable systems.'],
+['Cybersecurity','People who keep your stack safe and your auditors calm.'],
+['Data engineering','Builders of the pipelines your analytics depend on.'],
+['IT modernization','Whole teams for large-scale upgrades, built to be sustainable.'],
+['Startups','Fast, flexible hires for teams that are still finding their shape.'],
+['Enterprises','Scalable talent for established companies with big roadmaps.'],
+['Niche projects','One specialist with exactly the skill you are missing.'],
+['Based in the United States','Tell me the role, the stack and the deadline. Let’s talk.']];
+var LV=[
+{n:'Career road',i:0,w:2750,f:2640,sp:1.1,s:[[0,620],[710,500],[1300,520],[1910,840]],p:[[250,236,110],[880,226,130],[1390,222,120],[2040,230,130]],b:[[300,164],[925,154],[1430,150],[2090,158]],x:[[480,196,3],[1600,196,3],[2400,196,3]],e:[[400,240,600],[1000,780,1180],[1500,1340,1760],[2200,1960,2500]]},
+{n:'Night shift',i:4,w:3000,f:2890,sp:1.4,s:[[0,500],[600,350],[1040,300],[1440,380],[1900,300],[2300,700]],p:[[180,236,100],[700,226,110],[1100,220,100],[1520,224,120],[1950,232,100],[2400,226,120]],b:[[210,164],[730,154],[1130,148],[1560,152]],x:[[380,196,3],[1700,196,3],[2600,196,4]],e:[[300,100,480],[700,620,900],[1150,1060,1320],[1500,1460,1800],[2000,1920,2180],[2500,2320,2900]]},
+{n:'The castle',i:8,w:3200,f:3090,sp:1.7,s:[[0,420],[520,260],[880,240],[1220,300],[1620,220],[1960,260],[2320,880]],p:[[150,236,100],[560,226,110],[900,220,100],[1260,224,110],[1660,232,100],[2000,222,120],[2420,230,120]],b:[[180,164],[590,154],[930,148],[1290,152]],x:[[330,196,3],[2600,196,4]],e:[[250,120,400],[600,540,760],[950,900,1100],[1300,1240,1500],[1700,1640,1820],[2050,1980,2200],[2500,2340,3150]]}];
+var solids,blocks,bricks,coins,enemies,p,cam,got,bl,brk,won,card_t,lastSafe,parts=[],keys={},T=TH[0];
+function addBrick(x,y){var o={x:x,y:y,w:32,h:32,t:'k',dead:0};bricks.push(o);solids.push(o)}
+function build(n){lvl=n;var L=LV[n];T=TH[n];WORLD=L.w;FLAG=L.f;solids=[];blocks=[];bricks=[];coins=[];
+ L.s.forEach(function(s){solids.push({x:s[0],y:GY,w:s[1],h:60,t:'g'});coins.push({x:s[0]+60,y:260,t:1},{x:s[0]+s[1]-60,y:260,t:1})});
+ L.p.forEach(function(q){solids.push({x:q[0],y:q[1],w:q[2],h:16,t:'p'});coins.push({x:q[0]+q[2]/2-15,y:q[1]-36,t:1},{x:q[0]+q[2]/2+15,y:q[1]-36,t:1})});
+ L.b.forEach(function(b,i){var o={x:b[0],y:b[1],w:32,h:32,t:'b',i:L.i+i,used:0,bump:0};blocks.push(o);solids.push(o);addBrick(b[0]-32,b[1]);addBrick(b[0]+32,b[1])});
+ L.x.forEach(function(r){for(var k=0;k<r[2];k++)addBrick(r[0]+k*32,r[1])});
+ enemies=L.e.map(function(e){return{x:e[0],y:GY-20,min:e[1],max:e[2]-28,d:1,w:28,h:20,alive:1}});
+ p={x:40,y:GY-32,w:24,h:32,vx:0,vy:0,g:0,f:1,a:0,inv:0};cam=0;got=0;bl=0;brk=0;won=0;lastSafe=40;parts=[];
+ card.classList.remove('on');endEl.classList.remove('on')}
+build(0);
+function burst(s){for(var i=0;i<4;i++)parts.push({x:s.x+4+(i%2)*16,y:s.y+4+(i>>1)*16,vx:(i%2?1:-1)*(1.5+Math.random()*1.5),vy:-6-Math.random()*3})}
+function show(i){card.innerHTML='<b>'+info[i][0]+'</b>'+info[i][1];card.classList.add('on');clearTimeout(card_t);card_t=setTimeout(function(){card.classList.remove('on')},4800)}
+function hit(a,b){return a.x<b.x+b.w&&a.x+a.w>b.x&&a.y<b.y+b.h&&a.y+a.h>b.y}
+function showEnd(){var last=lvl>=2,$=function(i){return document.getElementById(i)};tot+=got;
+ $('et').textContent=last?'You finished the game!':'Level '+(lvl+1)+' clear!';
+ $('ep').textContent=last?'Total coins: '+tot+'. Now let’s find your next great hire.':'Coins '+got+'/'+coins.length+'. Next up: '+LV[lvl+1].n+'.';
+ $('next').style.display=last?'none':'';$('fin').style.display=last?'flex':'none';endEl.classList.add('on')}
+function step(){
+ if(won)return;
+ var l=keys.L,r=keys.R;
+ if(l)p.vx-=.7;if(r)p.vx+=.7;if(!l&&!r)p.vx*=.8;
+ p.vx=Math.max(-4.2,Math.min(4.2,p.vx));if(l&&!r)p.f=-1;if(r&&!l)p.f=1;
+ if(keys.J&&p.g){p.vy=-11.2;p.g=0}
+ if(!keys.J&&p.vy<-4)p.vy*=.6;
+ p.vy+=.55;if(p.vy>14)p.vy=14;
+ p.x+=p.vx;if(p.x<0){p.x=0;p.vx=0}
+ solids.forEach(function(s){if(!s.dead&&hit(p,s)){if(p.vx>0)p.x=s.x-p.w;else if(p.vx<0)p.x=s.x+s.w;p.vx=0}});
+ p.y+=p.vy;p.g=0;
+ solids.forEach(function(s){if(!s.dead&&hit(p,s)){if(p.vy>0){p.y=s.y-p.h;p.g=1;if(s.t=='g')lastSafe=s.x+40}
+  else if(p.vy<0){p.y=s.y+s.h;if(s.t=='k'){s.dead=1;brk++;burst(s)}else if(s.t=='b'&&!s.used){s.used=1;s.bump=10;bl++;show(s.i)}else if(s.t=='b'){s.bump=6;show(s.i)}}
+  p.vy=p.vy<0?1:0}});
+ p.a+=Math.abs(p.vx)*.08;
+ if(p.y>H+60){p.x=lastSafe;p.y=GY-80;p.vx=p.vy=0}
+ coins.forEach(function(q){if(q.t&&Math.abs(p.x+12-q.x)<20&&Math.abs(p.y+16-q.y)<24){q.t=0;got++}});
+ if(p.inv>0)p.inv--;
+ enemies.forEach(function(e){if(!e.alive)return;e.x+=e.d*LV[lvl].sp;if(e.x<e.min||e.x>e.max)e.d*=-1;
+  if(hit(p,e)){if(p.vy>0&&p.y+p.h-p.vy-2<e.y+8){e.alive=0;p.vy=-8}else if(!p.inv){p.inv=60;p.vy=-6;p.vx=-p.f*5;if(got>0)got--}}});
+ blocks.forEach(function(b){if(b.bump>0)b.bump--});
+ parts.forEach(function(q){q.vy+=.5;q.x+=q.vx;q.y+=q.vy});parts=parts.filter(function(q){return q.y<H+40});
+ if(p.x>FLAG&&!won){won=1;showEnd()}
+ cam=Math.max(0,Math.min(WORLD-W,p.x-W/3));
+}
+function px(x,y,w,h,col){c.fillStyle=col;c.fillRect(Math.round(x-cam),Math.round(y),w,h)}
+function draw(t){
+ c.fillStyle=T.sky;c.fillRect(0,0,W,H);
+ if(T.st)for(var j=0;j<45;j++){c.globalAlpha=.4+.6*Math.abs(Math.sin(t/700+j));c.fillStyle='#fff';c.fillRect((j*197)%W,(j*61)%170,2,2)}c.globalAlpha=1;
+ for(var i=0;i<9;i++){var cx=((i*330-cam*.3)%2900+2900)%2900-100;c.fillStyle=T.cl;c.fillRect(cx,50+(i%3)*40,90,24);c.fillRect(cx+16,36+(i%3)*40,50,16)}
+ for(i=0;i<8;i++){var hx=((i*420-cam*.55)%3400+3400)%3400-200;c.fillStyle=T.hill;c.beginPath();c.moveTo(hx,GY);c.lineTo(hx+110,GY-90);c.lineTo(hx+220,GY);c.fill()}
+ if(T.lava){c.fillStyle='#ff4500';c.fillRect(0,H-22+Math.sin(t/200)*3,W,30)}
+ solids.forEach(function(s){if(s.dead)return;
+  if(s.t=='k'){px(s.x,s.y,32,32,T.bb);px(s.x,s.y,32,2,T.bh);px(s.x,s.y+15,32,2,T.bm);px(s.x+15,s.y,2,15,T.bm);px(s.x+7,s.y+17,2,15,T.bm);px(s.x+23,s.y+17,2,15,T.bm);px(s.x,s.y+30,32,2,T.bm)}
+  else if(s.t=='g'){px(s.x,s.y,s.w,60,T.bb);px(s.x,s.y,s.w,12,T.gt);for(var k=0;k<s.w;k+=40)px(s.x+k,s.y+12,2,48,T.bm)}
+  else if(s.t=='p'){px(s.x,s.y,s.w,s.h,T.bb);for(var k=0;k<s.w;k+=20)px(s.x+k,s.y,2,s.h,T.bm);px(s.x,s.y,s.w,3,T.bh)}
+  else{var by=s.y-(s.bump>0?Math.sin(s.bump/10*Math.PI)*8:0);px(s.x,by,32,32,s.used?'#8a6a30':'#fcb800');px(s.x,by,32,3,'#fff1a8');px(s.x,by+29,32,3,'#a06b00');
+   if(!s.used){c.fillStyle='#7a4a00';c.font='16px "Press Start 2P",monospace';c.fillText('?',Math.round(s.x-cam+8),by+23)}}});
+ coins.forEach(function(q){if(!q.t)return;var w=Math.abs(Math.sin(t/250+q.x))*10+2;c.fillStyle='#fcb800';c.fillRect(Math.round(q.x-cam-w/2),q.y-9+Math.sin(t/300+q.x)*3,w,18);c.fillStyle='#fff1a8';c.fillRect(Math.round(q.x-cam-w/2),q.y-9+Math.sin(t/300+q.x)*3,2,18)});
+ enemies.forEach(function(e){if(!e.alive)return;var f=Math.floor(t/150)%2;px(e.x,e.y+4,28,12,'#8b4a1a');px(e.x+4,e.y,20,6,'#8b4a1a');px(e.x+5,e.y+6,6,4,'#fff');px(e.x+17,e.y+6,6,4,'#fff');px(e.x+8,e.y+7,3,3,'#000');px(e.x+17,e.y+7,3,3,'#000');px(e.x+(f?2:6),e.y+16,8,4,'#3a1a05');px(e.x+(f?18:14),e.y+16,8,4,'#3a1a05');px(e.x+3,e.y-4,2,5,'#3a1a05');px(e.x+23,e.y-4,2,5,'#3a1a05')});
+ parts.forEach(function(q){px(q.x,q.y,10,10,T.bb);px(q.x,q.y,10,2,T.bh)});
+ px(FLAG,GY-170,6,170,'#ddd');px(FLAG+6,GY-170,40,26,'#e52521');px(FLAG-4,GY-176,14,8,'#fcb800');
+ if(!(p.inv&&Math.floor(t/60)%2)){var wk=p.g&&Math.abs(p.vx)>.5?Math.floor(p.a)%2:0,x=p.x,y=p.y;
+  px(x+2,y,20,8,'#e52521');px(x+(p.f>0?10:2),y+2,12,6,'#e52521');px(x+4,y+8,16,8,'#f5c18f');px(x+(p.f>0?14:6),y+10,3,4,'#1d1a33');
+  px(x+2,y+16,20,6,'#e52521');px(x+4,y+18,16,8,'#2455d6');px(x+(wk?2:6),y+26,8,6,'#5a3410');px(x+(wk?14:12),y+26,8,6,'#5a3410')}
+ c.fillStyle='#fff';c.font='11px "Press Start 2P",monospace';c.fillText('COINS '+got+'/'+coins.length,14,24);c.fillText('BLOCKS '+bl+'/4',14,44);c.fillText('BRICKS '+brk,14,64);
+ c.textAlign='right';c.fillText('LEVEL '+(lvl+1)+'/3',W-14,24);c.fillText(LV[lvl].n.toUpperCase(),W-14,44);c.textAlign='left';
+}
+var last=0,acc=0;
+function loop(t){var d=Math.min(100,t-last);last=t;if(vis){acc+=d;while(acc>=16.67){step();acc-=16.67}}draw(t);requestAnimationFrame(loop)}
+requestAnimationFrame(loop);
+new IntersectionObserver(function(e){vis=e[0].isIntersecting},{threshold:.4}).observe(cv);
+var map={ArrowLeft:'L',KeyA:'L',ArrowRight:'R',KeyD:'R',Space:'J',ArrowUp:'J',KeyW:'J'};
+addEventListener('keydown',function(e){var k=map[e.code];if(k&&vis){keys[k]=1;e.preventDefault()}});
+addEventListener('keyup',function(e){var k=map[e.code];if(k)keys[k]=0});
+document.querySelectorAll('.pad button').forEach(function(b){var k=b.dataset.k;
+ b.addEventListener('pointerdown',function(e){e.preventDefault();keys[k]=1});
+ ['pointerup','pointerleave','pointercancel'].forEach(function(ev){b.addEventListener(ev,function(){keys[k]=0})})});
+document.getElementById('again').onclick=function(){tot=0;build(0)};
+document.getElementById('next').onclick=function(){build(lvl+1)};
+document.getElementById('cp').onclick=function(){var b=this,m='faizaanfaizy123@gmail.com';try{navigator.clipboard.writeText(m).then(function(){b.textContent='Copied!'},function(){b.textContent=m})}catch(e){b.textContent=m}setTimeout(function(){b.textContent='Copy email'},2500)};
+</script>
+</body>
+</html>
